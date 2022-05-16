@@ -1,0 +1,13 @@
+server:
+  servlet:
+    contextPath: /norway
+    session:
+      timeout: 600m
+
+api:
+  url: https://ssr.finanstilsynet.no
+
+httpConnPool:
+  maxTotal: 120
+  defaultMaxPerRoute: 25
+  timeout: 0
