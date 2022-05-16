@@ -54,7 +54,7 @@ public class FinanstilsynetService {
 
     private Either<Error, List<Isin>> queryIsin(String queryIsin, String fromDate, String toDate, Isin[] isinList) {
         List<Isin> financeDetails = Arrays.stream(isinList).filter(isin -> isin.getIsin().equalsIgnoreCase(queryIsin)).collect(Collectors.toList());
-        if (financeDetails.size() > 0 && !(fromDate.isEmpty() || toDate.isEmpty())) {
+        if (financeDetails.size() > 0 && !(fromDate.isEmpty() && toDate.isEmpty())) {
             List<Isin> financeDetailsWithDate = new ArrayList<>();
             try {
                 Date startDate = sdf.parse(fromDate);
